@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QBank</title>
+    <!-- Include Formspree Script -->
+    <script src="https://formspree.io/js/formbutton-v1.min.js" type="text/javascript" defer></script>
+    <!-- Include Markdown Script -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Include Mermaid script -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DBMS</h1>
+        <h2>By Koustubh Dave</h2>
+        <h4>~thank me later</h4>
+
+    </header>
+    <form id="submissionForm" action="https://formspree.io/f/xwkgwqyp" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <!-- Hidden field to capture user's IP address -->
+        <input type="hidden" name="_ip" value="">
+        <button class="btn" type="submit">Submit</button>
+    </form>
+
+    <div class="questions"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
