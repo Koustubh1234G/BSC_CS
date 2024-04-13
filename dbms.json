@@ -16,10 +16,6 @@
             "question": "DataBase System v/s File System",
             "answer": "<table><thead><tr><th>Database System</th><th>File System</th></tr></thead><tbody><tr><td>Manages structured data in tables with relationships</td><td>Manages files and directories</td></tr><tr><td>Provides query languages (e.g., SQL) for data access</td><td>Requires custom code for data retrieval and manipulation</td></tr><tr><td>Supports transactions for data consistency</td><td>Lacks built-in transaction support</td></tr><tr><td>Offers security features (authentication, encryption)</td><td>Security features may vary depending on OS settings</td></tr></tbody></table>"
         },
-        {
-            "question": "Views of Data",
-            "answer": "",
-            "graph": "graph BT;\nA --> B;"
-        }
+        // views of data?
     ]
 }
