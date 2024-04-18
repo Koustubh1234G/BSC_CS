@@ -5,7 +5,7 @@
     --secondary-text-color: rgb(255, 201, 115);
 }
 
-header {
+header, .header {
     display: block; /* Convert the inline element to a block-level element */
     margin: 0 auto; /* Auto margins horizontally center block-level elements */
     padding: 2%;
@@ -26,8 +26,24 @@ form {
     color: var(--primary-color);
 }
 
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
 img {
     width: fit-content;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
 }
 
 .questions {
@@ -35,6 +51,17 @@ img {
     flex-direction: column;
     justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.questions-btn {
+    text-align: center;
+    margin: 2%;
+    padding: 2%;
+    width: 80%;
+    font-size: larger;
+    font-weight: 800;
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .pair-container {
@@ -76,15 +103,17 @@ img {
 table {
     border-collapse: collapse;
     width: 100%;
-  }
-  th, td {
+    overflow-x: auto;
+}
+
+th, td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-  }
-  th {
+}
+th {
     background-color: #f2f2f2;
-  }
-  tr:nth-child(even) {
+}
+tr:nth-child(even) {
     background-color: #f2f2f2;
-  }
+}
