@@ -1,5 +1,8 @@
 // Fetch JSON data from Google Drive
-fetch("dbms.json")
+// files
+// const dbms = "dbms.json";
+const cpp = "cpp.json";
+fetch(cpp)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -57,6 +60,9 @@ function show_card(e, questionsContainer, data) {
     const answerdiv = document.createElement("div");
     answerdiv.classList.add("answer");
     answerdiv.innerHTML = marked.parse(e.answer);
+    mermaid.initialize({
+        startOnLoad: true
+    });
 
     // back btn
     const backBtn = document.createElement("button");
@@ -74,9 +80,17 @@ function show_card(e, questionsContainer, data) {
         // If the answer contains a "graph" element, render the Mermaid diagram
         const mermaidDiv = document.createElement("div");
         mermaidDiv.classList.add("mermaid");
-        mermaidDiv.innerHTML = e.graph;
+        mermaidDiv.innerHTML = e.graph.innerText;
         carddiv.appendChild(mermaidDiv);
-        mermaid.init();
+        // Initialize the Mermaid library and render the graph
+        mermaid.initialize({startOnLoad:false});
+        // Wait for the Mermaid library to load before rendering the graph
+        setTimeout(() => {
+            mermaid.render('graphDiv', e.graph.innerText, function(svgCode) {
+                // Replace the Mermaid div with the SVG code
+                mermaidDiv.innerHTML = svgCode;
+            });
+        }, 0);
     }
 
     // just show card on q container
@@ -92,7 +106,7 @@ function show_card(e, questionsContainer, data) {
 
 // form 
 // Check if the user has already submitted the form
-if (localStorage.getItem('formSubmitted')) {
+if (localStorage.getItem('formSubmitted-cpp')) {
     // If the form has already been submitted, disable the form
     document.getElementById('submissionForm').style.display = 'none';
     load_Question();
@@ -100,7 +114,7 @@ if (localStorage.getItem('formSubmitted')) {
     // If the form has not been submitted, enable form submission
     document.getElementById('submissionForm').addEventListener('submit', function () {
         // Set a flag in local storage indicating that the form has been submitted
-        localStorage.setItem('formSubmitted', true);
+        localStorage.setItem('formSubmitted-cpp', true);
         load_Question();
     });
 }
